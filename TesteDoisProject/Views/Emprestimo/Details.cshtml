@@ -1,0 +1,50 @@
+﻿@model TesteDoisProject.Models.Emprestimo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Emprestimo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Utente.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Utente.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Copia.CopiaID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Copia.CopiaID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataEmprestimo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataEmprestimo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDevolucao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDevolucao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Devolvido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Devolvido)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmprestimoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

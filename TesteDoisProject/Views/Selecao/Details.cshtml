@@ -1,0 +1,22 @@
+﻿@model TesteDoisProject.Models.Selecao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Selecao</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designacao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SelecaoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

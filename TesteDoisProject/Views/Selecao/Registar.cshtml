@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Registar";
+}
+
+
+<div ng-controller="SelecaoController">
+    {{SelecaoLista}}
+
+@*   <form ng-submit="Registar()">
+
+        <table>
+            <tr>
+                <td> <input type="text" ng-model="SelecaoModelo.Designacao"  /> </td>
+            </tr>
+            <tr>
+                <td> <input type="submit"  value="Salver" /> </td>
+            </tr>
+        </table>
+
+    </form>
+
+    <table>
+        <tr>
+            <td>Designacao</td>
+            
+        </tr>
+        <tr ng-repeat="item in SelecaoLista">
+            <td>{{item.designacao}}</td>
+        </tr>
+    </table>*@
+
+</div>
+
+@section scripts{
+    <script src="~/Scripts/AngularController/SelecaoController.js"></script>
+    }
+

@@ -1,0 +1,20 @@
+﻿    @{
+    ViewBag.Title = "ContactController";
+}
+
+<div ng-controller="ContactController">
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td>{{Contact.FirstName}}</td>
+        </tr
+            <tr>
+                <td>Last Name:</td>
+                <td>{{Contact.LastName}}</td>
+            </tr>
+    </table>
+</div>
+
+@section scripts{
+    <script src="~/Controllers/AngularController/ContactController.js"></script>
+}

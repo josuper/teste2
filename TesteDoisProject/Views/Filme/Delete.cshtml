@@ -1,0 +1,53 @@
+﻿@model TesteDoisProject.Models.Filme
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Filme</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sinopse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sinopse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Categoria.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.Designacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Actor.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Actor.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Autor.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Autor.Nome)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

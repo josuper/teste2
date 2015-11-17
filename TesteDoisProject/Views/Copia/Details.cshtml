@@ -1,0 +1,43 @@
+﻿@model TesteDoisProject.Models.Copia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Copia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Designacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Filme.Titulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Filme.Titulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estado.Designacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado.Designacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ocupada)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ocupada)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CopiaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

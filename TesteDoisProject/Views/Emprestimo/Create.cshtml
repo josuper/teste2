@@ -1,0 +1,67 @@
+﻿@model TesteDoisProject.Models.Emprestimo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Emprestimo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UtenteID, "Utente")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UtenteID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UtenteID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CopiaID, "Copia")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CopiaID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CopiaID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataEmprestimo)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DataEmprestimo, new { Value=@DateTime.Now.Year+"/"+@DateTime.Now.Month+"/"+@DateTime.Now.Day})
+            @Html.ValidationMessageFor(model => model.DataEmprestimo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDevolucao)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DataDevolucao)
+            @Html.ValidationMessageFor(model => model.DataDevolucao)
+        </div>
+
+       @* <div class="editor-label">
+            @Html.LabelFor(model => model.Devolvido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Devolvido)
+            @Html.ValidationMessageFor(model => model.Devolvido)
+        </div>
+        *@
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

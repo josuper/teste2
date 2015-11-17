@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TesteDoisProject.Models.Emprestimo>
+@{
+    ViewBag.Title = "FilmesPorDevolverData";
+}
+
+<h2>FilmesPorDevolverData</h2>
+
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Utente.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Copia.CopiaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Devolvido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Utente.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Copia.CopiaID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataEmprestimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDevolucao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Devolvido)
+        </td>
+        <td>
+           @* @Html.ActionLink("Edit", "Edit", new { id=item.EmprestimoID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.EmprestimoID }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.EmprestimoID }) |*@
+
+            @if (item.Devolvido==false)
+            {
+                @Html.ActionLink("Devolver", "Devolver", new { id=item.EmprestimoID })
+            }else{
+                
+            }
+            
+        </td>
+    </tr>
+}
+
+</table>

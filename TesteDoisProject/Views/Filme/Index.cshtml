@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TesteDoisProject.Models.Filme>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sinopse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.Designacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor.Nome)
+        </th>
+        <td>Quantidade de Copias boas</td>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sinopse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Designacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actor.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor.Nome)
+        </td>
+        <td>
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FilmeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FilmeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FilmeID }) |
+
+
+            @Html.ActionLink("Ver quantidade de Copias boas", "QuantidadeBoas", new { id=item.FilmeID }) |
+            @Html.ActionLink("Ver quantidade de Copias Razoaveis ", "QuantidadeRazoaveis", new { id=item.FilmeID }) |
+            @Html.ActionLink("Ver quantidade de Copias Mas", "QuantidadeMas", new { id=item.FilmeID })
+            
+
+        </td>
+    </tr>
+}
+
+</table>
